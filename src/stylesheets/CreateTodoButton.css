@@ -1,0 +1,22 @@
+.CreateTodoButton {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  line-height: 50px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--bg-color-todo-item);
+  background-color: var(--add-todo-button);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.CreateTodoButton:hover,
+.CreateTodoButton:focus {
+  transform: rotate(180deg);
+}
