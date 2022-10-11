@@ -1,23 +1,14 @@
 import React from 'react';
 import '../stylesheets/TodoItem.css';
+import { FiCheck, FiX } from 'react-icons/fi';
 
 function TodoItem(props) {
-  const onComplete = () => {
-    alert('Completaste el todo ' + props.text);
-  };
-
-  const onDelete = () => {
-    alert('Borraste el todo ' + props.text);
-  };
-
   return (
     <div className="TodoItem">
-      <span
+      <FiCheck
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
         onClick={props.onCheck}
-      >
-        C
-      </span>
+      />
       <p
         className={`TodoItem-description ${
           props.completed && 'TodoItem-description--active'
@@ -25,9 +16,7 @@ function TodoItem(props) {
       >
         {props.text}
       </p>
-      <span className="Icon Icon-delete" onClick={props.onDelete}>
-        X
-      </span>
+      <FiX className="Icon Icon-delete" onClick={props.onDelete} />
     </div>
   );
 }

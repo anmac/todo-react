@@ -1,0 +1,33 @@
+.ToggleTheme {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 64px;
+}
+
+.ToggleTheme__btn {
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--main-title);
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ToggleTheme__icon {
+  font-size: 1.4rem;
+  color: var(--main-title);
+}
+
+.ToggleTheme__btn:hover {
+  border: 2px solid var(--bg-color-todo-container);
+  background-color: var(--bg-color-todo-container);
+}

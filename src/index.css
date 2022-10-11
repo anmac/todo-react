@@ -2,14 +2,19 @@
   --bg-color-body: hsl(228, 69%, 91%);
   --bg-color-todo-container: hsl(230, 100%, 98%);
   --bg-color-todo-item: hsl(0, 0%, 100%);
-  --main-title: hsl(226, 47%, 22%);
-  --todo-text: hsl(234, 26%, 29%);
+  --bg-color-todo-item-gradient: linear-gradient(145deg, #e6e6e6, #ffffff);
+  --main-title: hsl(226, 47%, 24%);
+  --todo-text-search: hsl(234, 26%, 35%);
+  --todo-text-item: hsl(234, 26%, 35%);
   --circle-check: hsl(280, 49%, 56%);
   --add-todo-button: hsl(229, 67%, 46%);
-  --delete-todo-button: hsl(0, 100%, 70%);
+  --add-todo-button-modal: hsl(203, 93%, 61%);
+  --delete-todo-button: hsl(326, 100%, 73%);
+  --delete-todo-button-modal: hsl(0, 100%, 70%);
   --todo-check: hsl(247, 15%, 65%);
   --box-shadow-todo-container: 5px 5px 15px #bdbdbd, inset 5px 5px 15px #e7e7e7;
   --box-shadow-todo-item: 3px 3px 10px #bdbdbd, -3px -3px 10px #ffffff;
+  --bg-empty: radial-gradient(circle, #fff, #e7e7e7, #fff);
 }
 
 *,
@@ -18,10 +23,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  position: relative;
   display: grid;
+  max-width: 1920px;
   min-height: 100vh;
   margin: 0;
+  padding: 1.6rem 0;
   font-family: 'Roboto', sans-serif;
   background-color: var(--bg-color-body);
 }
@@ -29,27 +41,50 @@ body {
 body.dark {
   --bg-color-body: hsl(223, 100%, 80%);
   --bg-color-todo-container: hsl(225, 51%, 42%);
-  --bg-color-todo-item: hsl(224, 93%, 18%);
+  --bg-color-todo-item: var(--todo-text-item);
+  --bg-color-todo-item-base: hsl(224, 93%, 18%);
+  --bg-color-todo-item-gradient: var(--bg-color-todo-item-base);
   --main-title: hsl(227, 69%, 98%);
-  --todo-text: hsl(226, 27%, 79%);
+  --todo-text-search: hsl(234, 26%, 35%);
+  --todo-text-item: hsl(226, 27%, 90%);
   --circle-check: hsl(280, 49%, 56%);
   --add-todo-button: hsl(290, 98%, 50%);
+  --add-todo-button-modal: hsl(203, 93%, 61%);
   --delete-todo-button: hsl(282, 91%, 42%);
-  --todo-check: hsl(224, 71%, 31%);
+  --delete-todo-button-modal: hsl(0, 100%, 70%);
+  --todo-check: hsl(224, 71%, 70%);
+  --box-shadow-todo-container: 0 0 14px 0 var(--bg-color-todo-item-base);
+  --box-shadow-todo-item: 0 0 12px -4px var(--bg-color-body);
+  --bg-empty: radial-gradient(circle, var(--bg-color-todo-container));
 }
 
-.container {
+.container#root {
   position: relative;
   width: 90%;
   max-width: 400px;
-  padding: 1.4rem 1.8rem;
+  min-height: 600px;
+  padding: 1.8rem;
   margin: auto;
   border-radius: 2.6rem;
-  background-color: var(--bg-color-todo-container);
   background: linear-gradient(
     145deg,
     var(--bg-color-todo-item),
     var(--bg-color-todo-container)
   );
   box-shadow: var(--box-shadow-todo-container);
+}
+
+body.dark .container#root {
+  background: var(--bg-color-todo-container);
+  box-shadow: none;
+}
+
+.container#modal {
+  position: fixed;
+}
+
+.toogle {
+  position: absolute;
+  top: 0;
+  left: -100%;
 }

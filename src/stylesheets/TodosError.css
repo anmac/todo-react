@@ -1,0 +1,22 @@
+.TodosError {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  padding: 1rem;
+  text-align: center;
+  color: var(--todo-text);
+}
+
+.TodosError__icon {
+  font-size: 4rem;
+}
+
+.TodosError__title {
+  font-size: 32px;
+}
+
+.TodosError__message {
+  font-weight: 700;
+}

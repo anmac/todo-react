@@ -1,0 +1,12 @@
+.NoResults {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: var(--todo-text-item);
+}
+
+.NoResults__icon {
+  font-size: 3rem;
+}

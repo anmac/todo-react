@@ -1,7 +1,8 @@
 .CreateTodoButton {
   position: absolute;
-  right: 5%;
-  bottom: 5%;
+  right: 3%;
+  bottom: 3%;
+  z-index: 1;
   width: 50px;
   height: 50px;
   border: none;
@@ -16,7 +17,17 @@
   transition: all 0.3s ease;
 }
 
-.CreateTodoButton:hover,
-.CreateTodoButton:focus {
+.CreateTodoButton:hover {
   transform: rotate(180deg);
+  box-shadow: 0 0 1rem #fff, 0 0 2rem var(--add-todo-button);
+}
+
+.CreateTodoButton.closeIcon {
+  transform: rotate(45deg);
+  background-color: var(--delete-todo-button);
+}
+
+.CreateTodoButton.closeIcon:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 1rem #fff, 0 0 2rem var(--delete-todo-button);
 }

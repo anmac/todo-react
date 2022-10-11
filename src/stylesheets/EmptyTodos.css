@@ -1,0 +1,39 @@
+.EmptyTodos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 340px;
+  padding: 2rem;
+  text-align: center;
+  background: var(--bg-empty);
+  border-radius: 40%;
+}
+
+.EmptyTodos__icon {
+  font-size: 6rem;
+  color: var(--todo-text-item);
+}
+
+.EmptyTodos__title {
+  margin-bottom: 0;
+  font-weight: 700;
+  color: var(--todo-text-item);
+}
+
+.EmptyTodos__message {
+  color: var(--todo-text-item);
+}
+
+.EmptyTodos__message-btn {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 20px;
+  outline: none;
+  color: var(--bg-color-todo-item);
+  background: var(--add-todo-button);
+}

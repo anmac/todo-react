@@ -1,14 +1,22 @@
 .TodoSearch {
   position: relative;
-  display: inline-block;
-  width: 100%;
+  display: block;
+  width: 80%;
   padding: 1em 1.5em;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.8rem;
   outline: none;
-  border: 2px solid var(--add-todo-button);
-  /* border: 2px solid */
-  /*   linear-gradient(var(--add-todo-button), var(--add-todo-button)); */
+  border: 4px solid var(--bg-color-body);
   border-radius: 2rem;
   font-size: 1rem;
-  color: var(--todo-text);
+  color: var(--todo-text-search);
+  transition: all 0.2s ease;
+}
+
+.TodoSearch:hover {
+  outline: 2px solid var(--bg-color-body);
+  outline-offset: -8px;
+}
+
+.TodoSearch:focus {
+  border: 4px solid var(--circle-check);
 }

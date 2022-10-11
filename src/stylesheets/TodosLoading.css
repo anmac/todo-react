@@ -1,0 +1,47 @@
+.LoadingTodo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 240px;
+}
+
+.LoadingTodo-text {
+  width: 100%;
+  padding: 0.6em 0.8em;
+  margin: 0;
+  line-height: 50px;
+  border-radius: 1.4rem;
+  color: transparent;
+  background: #eee;
+}
+
+.LoadingTodo-btn {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: #fbfbfb;
+}
+
+.LoadingTodo-text,
+.LoadingTodo-btn {
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: preloadAnimation;
+  animation-timing-function: linear;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(110deg, #eee, #ddd, #eee);
+}
+
+@keyframes preloadAnimation {
+  0% {
+    background-position: -769px 0px;
+  }
+  100% {
+    background-position: 769px 0px;
+  }
+}
